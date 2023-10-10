@@ -34,3 +34,20 @@ body {
 .font-dosis{
   font-family: dosis;
 }
+
+.animaSeta{
+  animation: seta 1s infinite;
+}
+
+@keyframes seta {
+  0%{
+    padding-top: 0px;
+  }
+  50%{
+    padding-top: 50px;
+  }
+  100%{
+    padding-top: 0px;
+  }
+  
+}
