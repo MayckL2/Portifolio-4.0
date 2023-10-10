@@ -31,6 +31,10 @@ body {
   src: url(../static/Dosis-Bold.ttf);
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .font-dosis{
   font-family: dosis;
 }
@@ -50,4 +54,18 @@ body {
     padding-top: 0px;
   }
   
+}
+
+.animaLinha{
+  animation: linha 2s ease-in-out;
+  width: 240px;
+}
+
+@keyframes linha {
+  0%{
+    width: 140px;
+  }
+  100%{
+    width: 240px;
+  }
 }

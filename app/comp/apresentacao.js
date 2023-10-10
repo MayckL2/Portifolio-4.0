@@ -22,7 +22,7 @@ export default function Apresentacao(){
             <Contatos/>
 
             <div className="absolute bottom-5 w-full flex flex-col items-center">
-                <button className="bg-amber-400 px-6 py-1 text-lg rounded-lg text-slate-800 mb-4 hover:scale-110 transition-all">Veja Mais</button>
+                <a href="#tecnologias" className="bg-amber-400 px-6 py-1 text-lg rounded-lg text-slate-800 mb-4 hover:scale-110 transition-all">Veja Mais</a>
                 <Image src={'/setas.svg'} alt="setas para baixo" width={30} height={30} className="animate-bounce"/>
             </div>
         </session>
