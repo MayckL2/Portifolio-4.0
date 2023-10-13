@@ -1,15 +1,15 @@
 'use client'
 import CardTec from "./cardTec"
 
-export default function Tecnologias(){
+export default function Tecnologias(props){
 
     return(
-        <session id='tecnologias' className='min-h-screen w-full'>
+        <session id='tecnologias' className='min-h-screen w-full flex items-center'>
             
-            <div className="container mx-auto mt-20">
+            <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
                     Tecnologias
-                    <p className="p-[2px] bg-amber-400 rounded-lg animaLinha"></p>
+                    <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>
                 </h2>
 
                 <div className="flex justify-center items-center flex-wrap gap-4 m-8">

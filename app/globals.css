@@ -39,26 +39,10 @@ html{
   font-family: dosis;
 }
 
-.animaSeta{
-  animation: seta 1s infinite;
-}
-
-@keyframes seta {
-  0%{
-    padding-top: 0px;
-  }
-  50%{
-    padding-top: 50px;
-  }
-  100%{
-    padding-top: 0px;
-  }
-  
-}
-
 .animaLinha{
   animation: linha 2s ease-in-out;
-  width: 240px;
+  /* animation-delay: 1s; */
+  /* width: 240px; */
 }
 
 @keyframes linha {
@@ -67,5 +51,18 @@ html{
   }
   100%{
     width: 240px;
+  }
+}
+
+.renderiza{
+  animation: rend 2s ease;
+}
+
+@keyframes rend {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }
