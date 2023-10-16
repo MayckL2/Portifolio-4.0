@@ -11,7 +11,8 @@ export default function CardProj(props) {
     )
 
     return (
-        <a href="#" className={`relative flex flex-col justify-center bg-slate-800 rounded-lg overflow-hidden w-60`}>
+        <session className={`relative flex flex-col justify-center bg-slate-800 rounded-lg overflow-hidden w-60`}>
+            
             <Image src='link.svg' width={30} height={30}
             className="absolute top-2 right-2"/>
             
@@ -32,6 +33,6 @@ export default function CardProj(props) {
                     Repositorio
                 </a>
             </div>
-        </a>
+        </session>
     )
 }

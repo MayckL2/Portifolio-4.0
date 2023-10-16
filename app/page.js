@@ -7,31 +7,46 @@ import Tecnologias from './comp/tecnologias'
 import Projetos from './comp/projetos'
 import { useEffect, useState } from 'react'
 import { useCallback } from 'react'
+import Sobre from './comp/sobre'
+import Progresso from './comp/progresso'
 
 
 export default function Home() {
 
   const [mostraTec, setMostraTec] = useState(false)
   const [mostraProj, setMostraProj] = useState(false)
+  const [mostraSobre, setMostraSobre] = useState(false)
+  const [mostraBarra, setMostraBarra] = useState(false)
 
 // CALCULA SE O ELEMENTO APARECEU NA ROLAGEM DA TELA
   const onScroll = useCallback(event => {
     const tec = document.getElementById("tecnologias").getBoundingClientRect();
     const proj = document.getElementById('projetos').getBoundingClientRect();
+    const sobre = document.getElementById('sobre').getBoundingClientRect();
     // console.log(proj.top.toFixed())
 
     // rederiza tecnologias quando aparecer na tela
     if(tec.top.toFixed() <= 500){
       setMostraTec(true)
+      setMostraBarra(true)
     }else{
       setMostraTec(false)
     }
+
+    if(tec.top.toFixed() >= 100){
+      setMostraBarra(false)
+    }
     
     if(proj.top.toFixed() <= 500){
-      console.log('achou!')
       setMostraProj(true)
     }else{
       setMostraProj(false)
+    }
+
+    if(sobre.top.toFixed() <= 500){
+      setMostraSobre(true)
+    }else{
+      setMostraSobre(false)
     }
 
   }, []);
@@ -50,10 +65,12 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white font-dosis overflow-x-hidden"
       onScroll={() => scroll()}>
       <Header />
+      <Progresso block={mostraBarra} tec={mostraTec} proj={mostraProj} sobre={mostraSobre}/>
       <Apresentacao />
       <p id='found'></p>
       <Tecnologias block={mostraTec}/>
       <Projetos block={mostraProj}/>
+      <Sobre block={mostraSobre}/>
     </main>
   )
 }
