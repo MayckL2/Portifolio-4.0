@@ -66,3 +66,17 @@ html{
     opacity: 1;
   }
 }
+
+.animaLinhaFooter{
+  animation: footer 2s ease;
+  width: 80%;
+}
+
+@keyframes footer {
+  0%{
+    width: 20%;
+  }
+  100%{
+    width: 80%;
+  }
+}

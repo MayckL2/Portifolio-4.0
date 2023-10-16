@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { useCallback } from 'react'
 import Sobre from './comp/sobre'
 import Progresso from './comp/progresso'
+import Footer from './comp/footer'
 
 
 export default function Home() {
@@ -17,12 +18,14 @@ export default function Home() {
   const [mostraProj, setMostraProj] = useState(false)
   const [mostraSobre, setMostraSobre] = useState(false)
   const [mostraBarra, setMostraBarra] = useState(false)
+  const [mostraFooter, setMostraFooter] = useState(false)
 
 // CALCULA SE O ELEMENTO APARECEU NA ROLAGEM DA TELA
   const onScroll = useCallback(event => {
     const tec = document.getElementById("tecnologias").getBoundingClientRect();
     const proj = document.getElementById('projetos').getBoundingClientRect();
     const sobre = document.getElementById('sobre').getBoundingClientRect();
+    const footer = document.getElementById('footer').getBoundingClientRect();
     // console.log(proj.top.toFixed())
 
     // rederiza tecnologias quando aparecer na tela
@@ -48,6 +51,13 @@ export default function Home() {
     }else{
       setMostraSobre(false)
     }
+    
+    if(footer.top.toFixed() <= 700){
+      setMostraFooter(true)
+      console.log('achou')
+    }else{
+      setMostraFooter(false)
+    }
 
   }, []);
 
@@ -71,6 +81,7 @@ export default function Home() {
       <Tecnologias block={mostraTec}/>
       <Projetos block={mostraProj}/>
       <Sobre block={mostraSobre}/>
+      <Footer block={mostraFooter}/>
     </main>
   )
 }
