@@ -20,7 +20,7 @@ export default function Home() {
   const [mostraBarra, setMostraBarra] = useState(false)
   const [mostraFooter, setMostraFooter] = useState(false)
 
-// CALCULA SE O ELEMENTO APARECEU NA ROLAGEM DA TELA
+  // CALCULA SE O ELEMENTO APARECEU NA ROLAGEM DA TELA
   const onScroll = useCallback(event => {
     const tec = document.getElementById("tecnologias").getBoundingClientRect();
     const proj = document.getElementById('projetos').getBoundingClientRect();
@@ -29,33 +29,32 @@ export default function Home() {
     // console.log(proj.top.toFixed())
 
     // rederiza tecnologias quando aparecer na tela
-    if(tec.top.toFixed() <= 500){
+    if (tec.top.toFixed() <= 500) {
       setMostraTec(true)
       setMostraBarra(true)
-    }else{
+    } else {
       setMostraTec(false)
     }
 
-    if(tec.top.toFixed() >= 100){
+    if (tec.top.toFixed() >= 100) {
       setMostraBarra(false)
     }
-    
-    if(proj.top.toFixed() <= 500){
+
+    if (proj.top.toFixed() <= 500) {
       setMostraProj(true)
-    }else{
+    } else {
       setMostraProj(false)
     }
 
-    if(sobre.top.toFixed() <= 500){
+    if (sobre.top.toFixed() <= 500) {
       setMostraSobre(true)
-    }else{
+    } else {
       setMostraSobre(false)
     }
-    
-    if(footer.top.toFixed() <= 700){
+
+    if (footer.top.toFixed() <= 700) {
       setMostraFooter(true)
-      console.log('achou')
-    }else{
+    } else {
       setMostraFooter(false)
     }
 
@@ -75,13 +74,19 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white font-dosis overflow-x-hidden"
       onScroll={() => scroll()}>
       <Header />
-      <Progresso block={mostraBarra} tec={mostraTec} proj={mostraProj} sobre={mostraSobre}/>
+      <Progresso block={mostraBarra} tec={mostraTec} proj={mostraProj} sobre={mostraSobre} cont={mostraFooter} />
       <Apresentacao />
       <p id='found'></p>
-      <Tecnologias block={mostraTec}/>
-      <Projetos block={mostraProj}/>
-      <Sobre block={mostraSobre}/>
-      <Footer block={mostraFooter}/>
+      <Tecnologias block={mostraTec} />
+      <Projetos block={mostraProj} />
+      <Sobre block={mostraSobre} />
+      <Footer block={mostraFooter} />
+
+      <footer className="bg-black w-full mt-16 p-4">
+        <p>
+          &copy; Mayck Luciano 2023
+        </p>
+      </footer>
     </main>
   )
 }

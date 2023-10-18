@@ -4,7 +4,7 @@ import CardTec from "./cardTec"
 export default function Tecnologias(props){
 
     return(
-        <session id='tecnologias' className='min-h-screen w-full flex items-center'>
+        <session id='tecnologias' className='min-h-screen w-full flex items-center px-4'>
             
             <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
@@ -12,7 +12,7 @@ export default function Tecnologias(props){
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>
                 </h2>
 
-                <div className="flex justify-center items-center flex-wrap gap-4 m-8">
+                <div className="flex justify-center items-center flex-wrap gap-4 m-8 pr-16">
                     <CardTec tecnologia='html' border='border-amber-400/20'/>
                     <CardTec tecnologia='css' border='border-cyan-400/20'/>
                     <CardTec tecnologia='canva' border='border-cyan-200/20'/>

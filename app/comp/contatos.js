@@ -36,11 +36,6 @@ export default function Contatos() {
                 <Image src="/linkedin.svg" alt="Menu lateral" width={40} height={40}
                     className='' onMouseEnter={()=> mensagem(3)} onMouseLeave={()=> mensagem(3)}/>
             </a>
-            <a href="#" className="relative">
-            <p className='absolute top-[0.3rem] right-[3rem] transition-all opacity-0 w-max msg'>Baixar curriculo</p>
-                <Image src="/pdf.svg" alt="Menu lateral" width={40} height={40}
-                    className='' onMouseEnter={()=> mensagem(4)} onMouseLeave={()=> mensagem(4)}/>
-            </a>
         </aside>
     )
 }

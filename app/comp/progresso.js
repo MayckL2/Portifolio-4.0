@@ -3,7 +3,7 @@
 export default function Progresso(props){
 
     return(
-        <aside className={`flex-col fixed top-1/3 right-4 w-10 z-50 renderiza ${props.block ? 'flex' : 'hidden'}`}>
+        <aside className={`flex-col fixed top-1/4 right-4 w-10 z-50 renderiza ${props.block ? 'flex' : 'hidden'}`}>
 
             <a href="#tecnologias" className={`border-2 border-amber-500 rounded-full w-5 h-5 absolute top-0 ${props.tec ? 'bg-amber-500' : null} transition-all`}>
                 <p className="absolute right-7 -top-[6px] cursor-pointer underline-offset-1 hover:underline">Tecnologias</p>
@@ -17,6 +17,11 @@ export default function Progresso(props){
 
             <a href="#sobre" className={`border-2 border-amber-500 rounded-full w-5 h-5 absolute top-[196px] ${props.sobre ? 'bg-amber-500' : null} transition-all`}>
                 <p className="absolute right-7 -top-[6px] cursor-pointer underline-offset-1 hover:underline">Sobre</p>
+            </a>
+            <p className="bg-amber-500 p-[2px] h-20 absolute top-[216px] left-[8px]"></p>
+
+            <a href="#footer" className={`border-2 border-amber-500 rounded-full w-5 h-5 absolute top-[294px] ${props.cont ? 'bg-amber-500' : null} transition-all`}>
+                <p className="absolute right-7 -top-[6px] cursor-pointer underline-offset-1 hover:underline">Contato</p>
             </a>
 
         </aside>

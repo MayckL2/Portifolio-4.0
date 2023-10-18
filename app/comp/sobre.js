@@ -19,7 +19,7 @@ export default function Sobre(props) {
                     
                     <br></br>
                     
-                    <p className="flex flex-wrap">Quando não estou estudando e trabalhando, gosto de jogar/assistir basquete e assistir <div className="flex ">hora de aventura.<Image src={'/caracol.png'} width={25} height={25} className="mx-2 object-contain"/></div></p>
+                    <p className="flex flex-wrap">Quando não estou estudando e trabalhando, gosto de jogar/assistir basquete e assistir hora de aventura.<Image src={'/caracol.png'} width={25} height={25} className="mx-2 object-contain"/></p>
                 </div>
             </div>
         </session>

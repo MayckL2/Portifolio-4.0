@@ -5,7 +5,7 @@ export default function Projetos(props) {
     let listTec = ['react', 'canva', 'css']
 
     return (
-        <session id='projetos' className='min-h-screen w-full flex items-center'>
+        <session id='projetos' className='min-h-screen w-full flex items-center px-4'>
 
             <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
