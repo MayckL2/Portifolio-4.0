@@ -65,21 +65,22 @@ export default function Home() {
   // chama função para habilitar scroll
   useEffect(() => {
     habilitarScroll()
+    
+    window.addEventListener('resize', ()=>{
+      habilitarScroll()
+    })
   }, []);
 
-  screen.addEventListener('resize', ()=>{
-    habilitarScroll()
-  })
 
   // habilida scroll fora do mobile
   function habilitarScroll(){
-    console.log(screen.innerWidth)
-    //add eventlistener to screen
-    if (screen.innerWidth >= 640) {
-      screen.addEventListener("scroll", onScroll, { passive: true });
+    console.log(window.innerWidth)
+    //add eventlistener to window
+    if (window.innerWidth >= 640) {
+      window.addEventListener("scroll", onScroll, { passive: true });
     }else{
       // remove event on unmount to prevent a memory leak with the cleanup
-      screen.removeEventListener("scroll", onScroll, { passive: true });
+      window.removeEventListener("scroll", onScroll, { passive: true });
       setMostraTec(true)
       setMostraProj(true)
       setMostraSobre(true)
