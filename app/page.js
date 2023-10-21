@@ -64,21 +64,27 @@ export default function Home() {
 
   // ADICIONA FUNÇÃO DE SCROLL NO WINDOW
   useEffect(() => {
+    habilitarScroll()
+  }, []);
+
+  window.addEventListener('resize', ()=>{
+    habilitarScroll()
+  })
+
+  function habilitarScroll(){
+    console.log(window.innerWidth)
     //add eventlistener to window
     if (window.innerWidth >= 640) {
       window.addEventListener("scroll", onScroll, { passive: true });
-      // remove event on unmount to prevent a memory leak with the cleanup
-      return () => {
-        window.removeEventListener("scroll", onScroll, { passive: true });
-      }
     }else{
+      // remove event on unmount to prevent a memory leak with the cleanup
+      window.removeEventListener("scroll", onScroll, { passive: true });
       setMostraTec(true)
       setMostraProj(true)
       setMostraSobre(true)
       setMostraFooter(true)
     }
-  }, []);
-
+  }
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white font-dosis overflow-x-hidden"
       onScroll={() => scroll()}>
