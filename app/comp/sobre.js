@@ -1,13 +1,24 @@
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export default function Sobre(props) {
 
+    const [img, setImg] = useState('/backgroundSobre.png')
+
+    useEffect(()=>{
+        if(window.innerWidth >= 640){
+            setImg('/backgroundSobre.png')
+        }else{
+            setImg('/sobreMobile.png')
+        }
+    }, [])
+
     return (
-        <session id='sobre' className='p-4 w-full min-h-screen relative'>
-            <Image src={'/backgroundSobre.png'} alt="imagens de fundo" width={1000} height={1000}
+        <session id='sobre' className='p-4 w-full h-fit sm:min-h-screen relative'>
+            <Image src={img} alt="imagens de fundo" width={1000} height={1000}
                 className="w-full h-screen absolute top-0 left-0 object-contain z-10" />
 
-            <div className={`container mx-auto mt-20 z-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
+            <div className={`container mx-auto  z-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
                     Sobre
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>

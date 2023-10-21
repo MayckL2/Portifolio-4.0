@@ -18,12 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @font-face {
@@ -31,52 +28,72 @@ body {
   src: url(../static/Dosis-Bold.ttf);
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-.font-dosis{
+.font-dosis {
   font-family: dosis;
 }
 
-.animaLinha{
+.animaLinha {
   animation: linha 2s ease-in-out;
   /* animation-delay: 1s; */
   /* width: 240px; */
 }
 
 @keyframes linha {
-  0%{
+  0% {
     width: 140px;
   }
-  100%{
+
+  100% {
     width: 240px;
   }
 }
 
-.renderiza{
+.renderiza {
   animation: rend 2s ease;
 }
 
 @keyframes rend {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
 
-.animaLinhaFooter{
+.animaLinhaFooter {
   animation: footer 2s ease;
   width: 80%;
 }
 
 @keyframes footer {
-  0%{
+  0% {
     width: 20%;
   }
-  100%{
+
+  100% {
     width: 80%;
+  }
+}
+
+
+.ellipse {
+  background-image: url('/ellipse.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+@media (max-width: 640px) {
+  .ellipseMobile {
+    background-image: url('/ellipse.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

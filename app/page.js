@@ -10,6 +10,7 @@ import { useCallback } from 'react'
 import Sobre from './comp/sobre'
 import Progresso from './comp/progresso'
 import Footer from './comp/footer'
+import SideBar from './comp/sideBar'
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
   const [mostraSobre, setMostraSobre] = useState(false)
   const [mostraBarra, setMostraBarra] = useState(false)
   const [mostraFooter, setMostraFooter] = useState(false)
+  const [menu, setMenu] = useState('-right-[100%]')
 
   // CALCULA SE O ELEMENTO APARECEU NA ROLAGEM DA TELA
   const onScroll = useCallback(event => {
@@ -63,17 +65,25 @@ export default function Home() {
   // ADICIONA FUNÇÃO DE SCROLL NO WINDOW
   useEffect(() => {
     //add eventlistener to window
-    window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
-    return () => {
-      window.removeEventListener("scroll", onScroll, { passive: true });
+    if (window.innerWidth >= 640) {
+      window.addEventListener("scroll", onScroll, { passive: true });
+      // remove event on unmount to prevent a memory leak with the cleanup
+      return () => {
+        window.removeEventListener("scroll", onScroll, { passive: true });
+      }
+    }else{
+      setMostraTec(true)
+      setMostraProj(true)
+      setMostraSobre(true)
+      setMostraFooter(true)
     }
   }, []);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white font-dosis overflow-x-hidden"
       onScroll={() => scroll()}>
-      <Header />
+      <Header abreMenu={()=> setMenu('right-[0%]')}/>
+      <SideBar abreMenu={menu} fechaMenu={()=> setMenu('-right-[100%]')}/>
       <Progresso block={mostraBarra} tec={mostraTec} proj={mostraProj} sobre={mostraSobre} cont={mostraFooter} />
       <Apresentacao />
       <p id='found'></p>
