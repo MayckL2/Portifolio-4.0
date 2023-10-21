@@ -62,7 +62,7 @@ export default function Home() {
 
   }, []);
 
-  // ADICIONA FUNÇÃO DE SCROLL NO WINDOW
+  // chama função para habilitar scroll
   useEffect(() => {
     habilitarScroll()
   }, []);
@@ -71,6 +71,7 @@ export default function Home() {
     habilitarScroll()
   })
 
+  // habilida scroll fora do mobile
   function habilitarScroll(){
     console.log(window.innerWidth)
     //add eventlistener to window
