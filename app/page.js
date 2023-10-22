@@ -20,7 +20,7 @@ export default function Home() {
   const [mostraSobre, setMostraSobre] = useState(false)
   const [mostraBarra, setMostraBarra] = useState(false)
   const [mostraFooter, setMostraFooter] = useState(false)
-  const [menu, setMenu] = useState('-right-[100%]')
+  const [menu, setMenu] = useState('-right-[150%]')
 
   // CALCULA SE O ELEMENTO APARECEU NA ROLAGEM DA TELA
   const onScroll = useCallback(event => {
@@ -54,7 +54,7 @@ export default function Home() {
       setMostraSobre(false)
     }
 
-    if (footer.top.toFixed() <= 700) {
+    if (footer.top.toFixed() <= 400) {
       setMostraFooter(true)
     } else {
       setMostraFooter(false)
@@ -69,12 +69,13 @@ export default function Home() {
     window.addEventListener('resize', ()=>{
       habilitarScroll()
     })
+
+    window.location.href = '#'
   }, []);
 
 
   // habilida scroll fora do mobile
   function habilitarScroll(){
-    console.log(window.innerWidth)
     //add eventlistener to window
     if (window.innerWidth >= 640) {
       window.addEventListener("scroll", onScroll, { passive: true });
@@ -87,11 +88,20 @@ export default function Home() {
       setMostraFooter(true)
     }
   }
+
+  useEffect(()=>{
+    if(menu == 'right-[0%]'){
+      document.querySelector('body').classList.add('overflow-y-hidden')
+    }else{
+      document.querySelector('body').classList.remove('overflow-y-hidden')
+    }
+  }, [menu])
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white font-dosis overflow-x-hidden"
       onScroll={() => scroll()}>
       <Header abreMenu={()=> setMenu('right-[0%]')}/>
-      <SideBar abreMenu={menu} fechaMenu={()=> setMenu('-right-[100%]')}/>
+      <SideBar abreMenu={menu} fechaMenu={()=> setMenu('-right-[150%]')}/>
       <Progresso block={mostraBarra} tec={mostraTec} proj={mostraProj} sobre={mostraSobre} cont={mostraFooter} />
       <Apresentacao />
       <p id='found'></p>

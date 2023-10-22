@@ -2,7 +2,6 @@
 import CardProj from "./cardProj"
 
 export default function Projetos(props) {
-    let listTec = ['react', 'canva', 'css']
 
     return (
         <session id='projetos' className='h-fit sm:min-h-screen w-full flex items-center px-4'>
@@ -15,10 +14,24 @@ export default function Projetos(props) {
 
                 <div className="flex justify-center items-center flex-wrap gap-4 m-8">
                     <CardProj 
-                    projeto='/project' 
+                    projeto='/contries' 
                     titulo='Countries-React' 
-                    desc='Descrição do projeto contries feito em react'
-                    tec={listTec}
+                    desc='Site listando todos paises contando com algumas informaçoes de cada um junto de sua bandeira.'
+                    tec={['react', 'html', 'css', 'tailwind', 'js']}
+                    repo='https://tailwindcss.com/docs/animation'
+                    />
+                    <CardProj 
+                    projeto='/pokedex2' 
+                    titulo='Pokedex' 
+                    desc='Pokedex listando todos os pokemons junto com caracteristicas de cada um.'
+                    tec={['html', 'css', 'js']}
+                    repo='https://tailwindcss.com/docs/animation'
+                    />
+                    <CardProj 
+                    projeto='/jokempo' 
+                    titulo='Jokempo' 
+                    desc='Jogo de pedra, papel e tesoura, desafio do site front-end mentor.'
+                    tec={['html', 'css', 'js']}
                     repo='https://tailwindcss.com/docs/animation'
                     />
                 </div>

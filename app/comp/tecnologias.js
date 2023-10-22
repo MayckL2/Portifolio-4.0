@@ -16,11 +16,15 @@ export default function Tecnologias(props){
                     <CardTec tecnologia='html' border='border-amber-400/20'/>
                     <CardTec tecnologia='css' border='border-cyan-400/20'/>
                     <CardTec tecnologia='canva' border='border-cyan-200/20'/>
-                    <CardTec tecnologia='bootstrap' border='border-indigo-600/20'/>
                     <CardTec tecnologia='js' border='border-yellow-400/20'/>
-                    <CardTec tecnologia='php' border='border-indigo-400/20'/>
+                    <CardTec tecnologia='node' border='border-green-500/20'/>
                     <CardTec tecnologia='react' border='border-teal-400/20'/>
+                    <CardTec tecnologia='next' border='border-black/20'/>
+                    <CardTec tecnologia='react native' border='border-teal-400/20'/>
                     <CardTec tecnologia='tailwind' border='border-teal-500/20'/>
+                    <CardTec tecnologia='figma' border='border-amber-600/20'/>
+                    <CardTec tecnologia='bootstrap' border='border-indigo-600/20'/>
+                    <CardTec tecnologia='php' border='border-indigo-400/20'/>
                 </div>
             </div>
 

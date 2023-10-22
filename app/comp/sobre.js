@@ -14,7 +14,7 @@ export default function Sobre(props) {
     }, [])
 
     return (
-        <session id='sobre' className='p-4 w-full h-fit sm:min-h-screen relative'>
+        <session id='sobre' className='p-4 w-full h-fit sm:min-h-screen relative flex items-center'>
             <Image src={img} alt="imagens de fundo" width={1000} height={1000}
                 className="w-full h-screen absolute top-0 left-0 object-contain z-10" />
 
