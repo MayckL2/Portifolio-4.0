@@ -11,16 +11,16 @@ export default function CardProj(props) {
     )
 
     return (
-        <session className={`relative flex flex-col justify-center bg-slate-800 rounded-lg overflow-hidden w-60`}>
-            <a href='#'>
+        <session className={`relative flex flex-col sm:flex-row justify-center bg-slate-800 rounded-lg overflow-hidden w-full sm:w-[500px]`}>
+            <a href='#' className="w-full sm:w-1/2">
                 <Image src='link.svg' alt="link para o projeto" width={30} height={30}
                     className="absolute top-2 right-2 hover:scale-125 transition-all" />
 
                 <Image src={`${props.projeto}.png`} alt={props.projeto} width={1000} height={1000}
-                    className="w-full  object-fill" />
+                    className="w-full h-full object-fill"/>
             </a>
 
-            <div className="px-4 flex flex-col justify-between h-max gap-2">
+            <div className="px-4 flex flex-col justify-between w-full sm:w-1/2 h-max gap-2">
                 <h4 className="text-xl">{props.titulo}</h4>
 
                 <p className="text-sm leading-4">{props.desc}</p>
