@@ -1,12 +1,15 @@
 'use client'
 import CardProj from "./cardProj"
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 export default function Projetos(props) {
 
     return (
         <session id='projetos' className='h-fit sm:min-h-screen w-full flex items-center px-4'>
 
-            <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
+            {/* <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
                     Projetos
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>
@@ -35,7 +38,19 @@ export default function Projetos(props) {
                     repo='https://tailwindcss.com/docs/animation'
                     />
                 </div>
-            </div>
+            </div> */}
+
+
+            <swiper-container
+            slides-per-view="3" speed="500" loop="true" css-mode="true"
+            // controller-control=".swiper-2"
+            >
+                <swiper-slide>Slide 1</swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                
+            </swiper-container>
+
 
         </session>
     )
