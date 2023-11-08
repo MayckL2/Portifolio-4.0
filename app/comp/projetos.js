@@ -21,7 +21,7 @@ export default function Projetos(props) {
     const [preview, setPreview] = useState(3)
 
     useEffect(() => {
-        if (document.body.clientWidth <= 950) {
+        if (window.innerWidth <= 950) {
             setPreview(1)
         } else {
             setPreview(2)
@@ -29,7 +29,7 @@ export default function Projetos(props) {
     }, [])
 
     window.onresize = () => {
-        if (document.body.clientWidth <= 950) {
+        if (window.innerWidth <= 950) {
             setPreview(1)
         } else {
             setPreview(2)
