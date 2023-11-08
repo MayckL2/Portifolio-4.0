@@ -18,21 +18,24 @@ import "swiper/css/pagination";
 import { useState, useEffect } from "react";
 
 export default function Projetos(props) {
-    const [preview, setPreview] = useState(3)
+    const [preview, setPreview] = useState(2)
 
-    useEffect(() => {
-        if (window.innerWidth <= 950) {
-            setPreview(1)
-        } else {
-            setPreview(2)
-        }
-    }, [])
+    if (typeof window !== 'undefined') {
 
-    window.onresize = () => {
-        if (window.innerWidth <= 950) {
-            setPreview(1)
-        } else {
-            setPreview(2)
+        useEffect(() => {
+            if (window.innerWidth <= 950) {
+                setPreview(1)
+            } else {
+                setPreview(2)
+            }
+        }, [])
+
+        window.onresize = () => {
+            if (window.innerWidth <= 950) {
+                setPreview(1)
+            } else {
+                setPreview(2)
+            }
         }
     }
 
