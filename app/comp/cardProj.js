@@ -11,7 +11,7 @@ export default function CardProj(props) {
     )
 
     return (
-        <session className={`relative flex flex-col sm:flex-row justify-center bg-slate-800 rounded-lg overflow-hidden w-full sm:w-[500px]`}>
+        <session className={`relative flex flex-col sm:flex-row justify-center bg-slate-800 rounded-lg overflow-hidden w-full`}>
             <a href='#' className="w-full sm:w-1/2">
                 <Image src='link.svg' alt="link para o projeto" width={30} height={30}
                     className="absolute top-2 right-2 hover:scale-125 transition-all" />
