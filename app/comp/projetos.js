@@ -106,27 +106,18 @@ export default function Projetos(props) {
                     </SwiperSlide>
                     <SwiperSlide>
                         <CardProj
-                            projeto="/pokedex2"
-                            titulo="Pokedex"
-                            desc="Pokedex listando todos os pokemons junto com caracteristicas de cada um."
-                            tec={["html", "css", "js"]}
+                            projeto="/contries"
+                            titulo="Contries React"
+                            desc="Site informativo sobre diversos paises ao redor do mundo."
+                            tec={["html", "css", "js", "react"]}
                             repo="https://tailwindcss.com/docs/animation"
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <CardProj
-                            projeto="/pokedex2"
-                            titulo="Pokedex"
-                            desc="Pokedex listando todos os pokemons junto com caracteristicas de cada um."
-                            tec={["html", "css", "js"]}
-                            repo="https://tailwindcss.com/docs/animation"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardProj
-                            projeto="/pokedex2"
-                            titulo="Pokedex"
-                            desc="Pokedex listando todos os pokemons junto com caracteristicas de cada um."
+                            projeto="/jokempo"
+                            titulo="Jokempo"
+                            desc="Jogo de jokempo com pontuação de vitorias."
                             tec={["html", "css", "js"]}
                             repo="https://tailwindcss.com/docs/animation"
                         />

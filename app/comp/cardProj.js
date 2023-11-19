@@ -7,7 +7,7 @@ export default function CardProj(props) {
 
     const listTec = props.tec.map((img, i) =>
         <Image key={i} title={img} src={`${img}.svg`} alt={img} width={100} height={100}
-            className='w-10' />
+            className='w-10 py-2' />
     )
 
     return (
@@ -17,15 +17,15 @@ export default function CardProj(props) {
                     className="absolute top-2 right-2 hover:scale-125 transition-all" />
 
                 <Image src={`${props.projeto}.png`} alt={props.projeto} width={1000} height={1000}
-                    className="w-full h-full object-fill"/>
+                    className="w-full h-52 object-fill"/>
             </a>
 
-            <div className="px-4 flex flex-col justify-between w-full sm:w-1/2 h-max gap-2">
+            <div className="px-4 pt-4 flex flex-col justify-between w-full sm:w-1/2  gap-2">
                 <h4 className="text-xl">{props.titulo}</h4>
 
-                <p className="text-sm leading-4">{props.desc}</p>
+                <p className="text-sm leading-4 text-slate-600 text-center">{props.desc}</p>
 
-                <div className="flex flex-row justify-around flex-wrap gap-1">
+                <div className="flex flex-row justify-around flex-wrap gap-1 bg-slate-700 rounded">
                     {listTec}
                 </div>
 
