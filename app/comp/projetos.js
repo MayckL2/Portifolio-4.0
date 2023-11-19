@@ -44,38 +44,44 @@ export default function Projetos(props) {
             id="projetos"
             className="h-fit sm:min-h-screen w-full flex items-center px-4"
         >
-            {/* <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
+            <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
                     Projetos
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>
                 </h2>
 
-                <div className="flex justify-center items-center flex-wrap gap-4 m-8">
+                <div className="flex justify-center items-center flex-wrap gap-10 m-8">
                     <CardProj 
-                    projeto='/contries' 
+                    projeto='/Countries' 
                     titulo='Countries-React' 
-                    desc='Site listando todos paises contando com algumas informaçoes de cada um junto de sua bandeira.'
+                    desc='Site listando todos paises contando com algumas informaçoes de cada um junto de sua bandeira. Possibilitando tambem a persquisa de pais pelo nome e continente.'
                     tec={['react', 'html', 'css', 'tailwind', 'js']}
-                    repo='https://tailwindcss.com/docs/animation'
+                    repo='https://github.com/MayckL2/Countries-React'
+                    site='https://countries-react-smoky.vercel.app/'
+                    reverse={false}
                     />
                     <CardProj 
-                    projeto='/pokedex2' 
+                    projeto='/Pokedex' 
                     titulo='Pokedex' 
-                    desc='Pokedex listando todos os pokemons junto com caracteristicas de cada um.'
+                    desc='Pokedex listando todos os pokemons junto com caracteristicas de cada um. Possuindo tambem uma barra de pesquisa para buscar o pokemon pelo nome.'
                     tec={['html', 'css', 'js']}
-                    repo='https://tailwindcss.com/docs/animation'
+                    repo='https://github.com/MayckL2/Pokedex-Js'
+                    site='https://mayckl2.github.io/Pokedex-Js/'
+                    reverse={true}
                     />
                     <CardProj 
                     projeto='/jokempo' 
                     titulo='Jokempo' 
-                    desc='Jogo de pedra, papel e tesoura, desafio do site front-end mentor.'
+                    desc='Jogo de pedra, papel e tesoura, desafio do site front-end mentor com contagem de pontuação e guia de regras.'
                     tec={['html', 'css', 'js']}
-                    repo='https://tailwindcss.com/docs/animation'
+                    repo='https://github.com/MayckL2/rock-paper-scissors-master'
+                    site='https://mayckl2.github.io/rock-paper-scissors-master/'
+                    reverse={false}
                     />
                 </div>
-            </div> */}
+            </div>
 
-            <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
+            {/* <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
                     Projetos
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>
@@ -97,7 +103,7 @@ export default function Projetos(props) {
                 >
                     <SwiperSlide>
                         <CardProj
-                            projeto="/pokedex2"
+                            projeto="/Pokedex"
                             titulo="Pokedex"
                             desc="Pokedex listando todos os pokemons junto com caracteristicas de cada um."
                             tec={["html", "css", "js"]}
@@ -106,8 +112,8 @@ export default function Projetos(props) {
                     </SwiperSlide>
                     <SwiperSlide>
                         <CardProj
-                            projeto="/contries"
-                            titulo="Contries React"
+                            projeto="/Countries"
+                            titulo="Countries React"
                             desc="Site informativo sobre diversos paises ao redor do mundo."
                             tec={["html", "css", "js", "react"]}
                             repo="https://tailwindcss.com/docs/animation"
@@ -123,7 +129,7 @@ export default function Projetos(props) {
                         />
                     </SwiperSlide>
                 </Swiper>
-            </div>
+            </div> */}
         </session>
     );
 }
