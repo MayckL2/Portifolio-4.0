@@ -12,7 +12,6 @@ import Progresso from './comp/progresso'
 import Footer from './comp/footer'
 import SideBar from './comp/sideBar'
 
-
 export default function Home() {
 
   const [mostraTec, setMostraTec] = useState(false)
