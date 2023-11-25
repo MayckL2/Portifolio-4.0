@@ -6,17 +6,17 @@ export default function CardProj(props) {
     const [hover, setHover] = useState(false)
 
     const listTec = props.tec.map((img, i) =>
-        <Image key={i} title={img} src={`${img}.svg`} alt={img} width={100} height={100}
+        <Image key={i} title={img} src={`${img}.svg`} alt={'imagem tecnologia'} width={100} height={100}
             className='w-6 py-2 grayscale' />
     )
 
     return (
-        <session className={`relative flex flex-col ${props.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-start rounded-lg overflow-hidden w-full lg:w-11/12 h-max lg:h-64`}>
+        <session className={`${props.animate} relative flex flex-col ${props.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-start rounded-lg overflow-hidden w-full lg:w-11/12 h-max lg:h-64`}>
 
-            <a href={props.site} target="_blank" className="relative w-max lg:w-[600px] flex"
+            <a href={props.site} target="_blank" className="relative w-fit lg:w-[600px] flex"
             onMouseEnter={()=> setHover(true)} onMouseLeave={()=> setHover(false)}>
                 <Image src='link.svg' alt="link para o projeto" width={30} height={30}
-                    className="absolute z-10 top-2 right-2 hover:scale-125 transition-all" />
+                    className="absolute z-10 top-4 right-4 hover:scale-125 transition-all" />
                 <Image src={`${props.projeto}.png`} alt={props.projeto} width={1000} height={1000}
                     className={`w-[600px] object-fill cursor-pointer hover:opacity-50 transition-all`} />
                 {/* <p className={`w-full text-center self-center absolute ${hover ? '' : 'hidden'}`}>Visite o projeto {props.titulo}</p> */}

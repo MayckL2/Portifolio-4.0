@@ -12,15 +12,16 @@ export default function Apresentacao() {
 
             <div className="flex flex-col items-center w-full z-10">
                 <p className="text-center text-3xl">Ola, meu nome é Mayck Luciano e sou um</p>
-                <h1 className="text-center text-4xl text-amber-400 flex gap-2">
-                    Desenvolvedor
-                    <Typewriter
-                        options={{
-                            strings: [' Front-end', ' Back-end'],
-                            autoStart: true,
-                            loop: true,
-                        }}
-                    />
+                <h1 className="text-center text-4xl text-amber-400 flex flex-col sm:flex-row gap-2">
+                    Desenvolvedor <span>
+                        <Typewriter
+                            options={{
+                                strings: [' Front-end', ' Back-end'],
+                                autoStart: true,
+                                loop: true,
+                            }}
+                        />
+                    </span>
                 </h1>
                 <p className="text-center text-slate-500 w-full sm:w-2/4">Desenvolvo sites novos e aprimoro sites ja criados tornando a experiencia do usuario o mais prazerora possivel.</p>
             </div>

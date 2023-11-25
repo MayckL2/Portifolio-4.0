@@ -59,6 +59,7 @@ export default function Projetos(props) {
                     repo='https://github.com/MayckL2/Countries-React'
                     site='https://countries-react-smoky.vercel.app/'
                     reverse={false}
+                    animate={'animaProj'}
                     />
                     <CardProj 
                     projeto='/Pokedex' 
@@ -68,6 +69,7 @@ export default function Projetos(props) {
                     repo='https://github.com/MayckL2/Pokedex-Js'
                     site='https://mayckl2.github.io/Pokedex-Js/'
                     reverse={true}
+                    animate={'animaProj2'}
                     />
                     <CardProj 
                     projeto='/jokempo' 
@@ -77,6 +79,7 @@ export default function Projetos(props) {
                     repo='https://github.com/MayckL2/rock-paper-scissors-master'
                     site='https://mayckl2.github.io/rock-paper-scissors-master/'
                     reverse={false}
+                    animate={'animaProj3'}
                     />
                 </div>
             </div>

@@ -14,7 +14,7 @@ export default function SideBar(props) {
     }
 
     return (
-        <aside className={`bg-slate-900 fixed top-0 ${props.abreMenu} w-full h-screen z-20 flex justify-end items-center px-8 transition-all`}>
+        <aside className={`bg-slate-900 fixed bottom-0 ${props.abreMenu} w-full h-screen z-30 flex justify-end items-center px-8 transition-all`}>
             <Image src={'/menu2.svg'} alt="botão para fechar menu lateral" width={50} height={50}
                 className="absolute right-4 top-4 cursor-pointer" onClick={props.fechaMenu}/>
 
