@@ -24,6 +24,7 @@ export default function Apresentacao() {
                     </span>
                 </h1>
                 <p className="text-center text-slate-500 w-full sm:w-2/4">Desenvolvo sites novos e aprimoro sites ja criados tornando a experiencia do usuario o mais prazerora possivel.</p>
+                <Contatos />
             </div>
 
             <div className="relative bottom-10 right-40 ellipse">
@@ -35,7 +36,6 @@ export default function Apresentacao() {
                 className='cursor-pointer hidden sm:block absolute top-0'/> */}
             </div>
 
-            <Contatos />
 
             <div className="absolute -bottom-20 sm:bottom-5 w-full flex flex-col items-center">
                 <a href="#tecnologias" className="bg-amber-400 px-6 py-1 text-lg rounded-lg text-slate-800 mb-4 hover:scale-110 transition-all">Veja Mais</a>

@@ -24,7 +24,7 @@ export default function Sobre(props) {
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>
                 </h2>
 
-                <div className="mt-8 text-xl w-full">
+                <div className="mt-8 text-xl w-full sm:w-2/3">
                     
                     <p>Meu nome é Mayck Luciano, trabalho com <span className="text-amber-500">Front-end</span> e atualmente estudo <span className="text-teal-500">Back-end</span>.
                         Gosto de construir web-sites bonitos e atraentes seguindo os constumes de UI  e UX, e busco estudar tecnologias sobre back-end para ter mais visibilidade pelo mercado em ambas áreas.</p>
