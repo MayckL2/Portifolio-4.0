@@ -53,7 +53,8 @@ export default function Home() {
       setMostraSobre(false)
     }
 
-    if (footer.top.toFixed() <= 400) {
+    console.log(footer.top.toFixed())
+    if (footer.top.toFixed() <= 600) {
       setMostraFooter(true)
     } else {
       setMostraFooter(false)
