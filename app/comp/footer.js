@@ -1,12 +1,16 @@
 import Image from "next/image"
 import { Input } from "postcss";
 import { useState } from "react";
+import Swal from 'sweetalert2'
 
 export default function Footer(props) {
     const [imgCopy, setImgCopy] = useState('/copy.svg')
     const [email, setEmail] = useState()
     const [subject, setSubject] = useState()
     const [mensagem, setMensagem] = useState()
+    const [erro, setErro] = useState(false)
+    const [erro2, setErro2] = useState(false)
+    const [erro3, setErro3] = useState(false)
 
     const copiaEmail = () => {
         navigator.clipboard.writeText('MayckLuciano2@gmail.com');
@@ -15,29 +19,56 @@ export default function Footer(props) {
     }
 
     function enviarEmail() {
-        fetch(
-            "https://email-api-opal.vercel.app/",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    "email": email,
-                    "toEmail": "mayckluciano2@gmail.com",
-                    "subject": subject,
-                    "text": mensagem
+        if (!email) {
+            setErro(true)
+        } else {
+            setErro(false)
+        }
+
+        if (!subject) {
+            setErro2(true)
+        } else {
+            setErro2(false)
+        }
+
+        if (!mensagem) {
+            setErro3(true)
+        } else {
+            setErro3(false)
+        }
+
+        if (!erro && !erro2 && !erro3) {
+            fetch(
+                "https://email-api-opal.vercel.app/",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "email": email,
+                        "toEmail": "mayckluciano2@gmail.com",
+                        "subject": subject,
+                        "text": mensagem
+                    })
+                }
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    setEmail('')
+                    setSubject('')
+                    setMensagem('')
+                    Swal.fire({
+                        title: 'Email enviado com sucesso!',
+                        text: 'Responderei o e-mail assim que possivel.',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
                 })
-            }
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                setEmail('')
-                setSubject('')
-                setMensagem('')
-            })
-            .catch(error => console.log(error))
+                .catch(error => console.log(error))
+        }
+
     }
 
     return (
@@ -76,15 +107,24 @@ export default function Footer(props) {
                 <p>Ou me envie um E-mail</p>
                 <form className="w-full flex flex-col justify-between gap-8">
                     <div className="flex gap-8 flex-col sm:flex-row">
-                        <input type="email" required autoComplete="off" onChange={(e)=> setEmail(e.target.value)} value={email}
-                            className="bg-slate-700 rounded px-4 py-2 w-full sm:w-1/2 focus:outline-none focus:bg-slate-500" placeholder="Email" />
-                        <input type="text" required autoComplete="off" onChange={(e)=> setSubject(e.target.value)} value={subject}
-                            className="bg-slate-700 rounded px-4 py-2 w-full sm:w-1/2 focus:outline-none focus:bg-slate-500" placeholder="Assunto" />
+                        <div className="w-1/2">
+                            <input type="email" required autoComplete="off" onChange={(e) => setEmail(e.target.value)} value={email}
+                                className="bg-slate-700 rounded px-4 py-2 w-full focus:outline-none focus:bg-slate-500" placeholder="Email" />
+                            {erro ? <p className="text-red-500 text-sm">Preencha o e-mail...</p> : null}
+                        </div>
+                        <div className="w-1/2">
+                            <input type="text" required autoComplete="off" onChange={(e) => setSubject(e.target.value)} value={subject}
+                                className="bg-slate-700 rounded px-4 py-2 w-full focus:outline-none focus:bg-slate-500" placeholder="Assunto" />
+                            {erro2 ? <p className="text-red-500 text-sm">Preencha o assunto...</p> : null}
+                        </div>
                     </div>
-                    <textarea type="text" required autoComplete="off" onChange={(e)=> setMensagem(e.target.value)} value={mensagem}
-                        className="bg-slate-700 rounded px-4 py-2 w-full h-40 resize-none focus:outline-none focus:bg-slate-500" placeholder="Mensagem..." />
+                    <div>
 
-                    <button type="button" className="bg-blue-500 text-slate-800 w-fit px-8 py-2 rounded-md text-xl self-end hover:outline-blue-500 hover:bg-transparent hover:text-blue-500 outline-3 outline transition-all" onClick={()=> enviarEmail()}>Enviar</button>
+                        <textarea type="text" required autoComplete="off" onChange={(e) => setMensagem(e.target.value)} value={mensagem}
+                            className="bg-slate-700 rounded px-4 py-2 w-full h-40 resize-none focus:outline-none focus:bg-slate-500" placeholder="Mensagem..." />
+                        {erro3 ? <p className="text-red-500 text-sm">Preencha a mensagem...</p> : null}
+                    </div>
+                    <button type="button" className="bg-blue-500 text-slate-800 w-fit px-8 py-2 rounded-md text-xl self-end hover:outline-blue-500 hover:bg-transparent hover:text-blue-500 outline-3 outline transition-all" onClick={() => enviarEmail()}>Enviar</button>
                 </form>
             </div>
 
