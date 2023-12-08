@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import SideBar from './sideBar'
+import Contatos from './contatos'
 
 export default function Header(props){
 
@@ -20,6 +21,8 @@ export default function Header(props){
             <Image src="menu.svg" alt="Menu lateral" width={50} height={50}
             className='sm:hidden cursor-pointer hover:scale-125 transition-all'
             onClick={(props.abreMenu)}/>
+
+            <Contatos />
         </header>
         )
 }

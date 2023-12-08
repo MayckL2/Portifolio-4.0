@@ -88,13 +88,13 @@ export default function Home() {
     }
   }
 
-  useEffect(()=>{
-    if(menu == 'right-[0%]'){
-      document.querySelector('body').classList.add('overflow-y-hidden')
-    }else{
-      document.querySelector('body').classList.remove('overflow-y-hidden')
-    }
-  }, [menu])
+  // useEffect(()=>{
+  //   if(menu == 'right-[0%]'){
+  //     document.querySelector('body').classList.add('overflow-y-hidden')
+  //   }else{
+  //     document.querySelector('body').classList.remove('overflow-y-hidden')
+  //   }
+  // }, [menu])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white font-dosis overflow-x-hidden"
