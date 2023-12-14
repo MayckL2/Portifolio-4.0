@@ -5,9 +5,9 @@ import Swal from 'sweetalert2'
 
 export default function Footer(props) {
     const [imgCopy, setImgCopy] = useState('/copy.svg')
-    const [email, setEmail] = useState()
-    const [subject, setSubject] = useState()
-    const [mensagem, setMensagem] = useState()
+    const [email, setEmail] = useState('')
+    const [subject, setSubject] = useState('')
+    const [mensagem, setMensagem] = useState('')
     const [erro, setErro] = useState(false)
     const [erro2, setErro2] = useState(false)
     const [erro3, setErro3] = useState(false)
@@ -19,55 +19,80 @@ export default function Footer(props) {
     }
 
     function enviarEmail() {
-        if (!email) {
+        if (!email || !email.includes('@')) {
             setErro(true)
+            return null
         } else {
             setErro(false)
         }
 
         if (!subject) {
             setErro2(true)
+            return null
         } else {
             setErro2(false)
         }
 
         if (!mensagem) {
             setErro3(true)
+            return null
         } else {
             setErro3(false)
         }
 
-        if (!erro && !erro2 && !erro3) {
-            fetch(
-                "https://email-api-opal.vercel.app/",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        "email": email,
-                        "toEmail": "mayckluciano2@gmail.com",
-                        "subject": subject,
-                        "text": mensagem
-                    })
-                }
-            )
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data)
-                    setEmail('')
-                    setSubject('')
-                    setMensagem('')
-                    Swal.fire({
-                        title: 'Email enviado com sucesso!',
-                        text: 'Responderei o e-mail assim que possivel.',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
+
+        fetch(
+            "https://email-api-opal.vercel.app/",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "email": email,
+                    "toEmail": "mayckluciano2@gmail.com",
+                    "subject": subject,
+                    "text": mensagem
                 })
-                .catch(error => console.log(error))
-        }
+            }
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                setEmail('')
+                setSubject('')
+                setMensagem('')
+                Swal.fire({
+                    title: '<span class="text-lg text-white">Email enviado com sucesso!</span>',
+                    html: "<p class='text-sm text-center text-white'>Responderei o e-mail assim que possivel.</p>",
+                    icon: 'success',
+                    iconColor: '#3A44F2',
+                    toast: true,
+                    position: "top-end",
+                    timer: 5000,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    width: '25rem',
+                    background: '#3A7FF3'
+
+                })
+            })
+            .catch(error => {
+                console.log(error)
+                Swal.fire({
+                    title: '<span class="text-lg text-white">Erro ao enviar e-mail!</span>',
+                    html: "<p class='text-sm text-white'>Tente novamente mais tarde...</p>",
+                    icon: 'error',
+                    iconColor: '#F51B14',
+                    toast: true,
+                    position: "top-end",
+                    timer: 5000,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    width: '25rem',
+                    background: '#FA355B'
+                })
+            })
 
     }
 
@@ -107,12 +132,12 @@ export default function Footer(props) {
                 <p>Ou me envie um E-mail</p>
                 <form className="w-full flex flex-col justify-between gap-8">
                     <div className="flex gap-8 flex-col sm:flex-row">
-                        <div className="w-1/2">
+                        <div className="w-full sm:w-1/2">
                             <input type="email" required autoComplete="off" onChange={(e) => setEmail(e.target.value)} value={email}
                                 className="bg-slate-700 rounded px-4 py-2 w-full focus:outline-none focus:bg-slate-500" placeholder="Email" />
                             {erro ? <p className="text-red-500 text-sm">Preencha o e-mail...</p> : null}
                         </div>
-                        <div className="w-1/2">
+                        <div className="w-full sm:w-1/2">
                             <input type="text" required autoComplete="off" onChange={(e) => setSubject(e.target.value)} value={subject}
                                 className="bg-slate-700 rounded px-4 py-2 w-full focus:outline-none focus:bg-slate-500" placeholder="Assunto" />
                             {erro2 ? <p className="text-red-500 text-sm">Preencha o assunto...</p> : null}

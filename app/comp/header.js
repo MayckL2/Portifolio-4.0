@@ -22,7 +22,9 @@ export default function Header(props){
             className='sm:hidden cursor-pointer hover:scale-125 transition-all'
             onClick={(props.abreMenu)}/>
 
-            <Contatos />
+            <div className={`${props.mostraContatos ? 'block' : 'hidden'} animaCont`}>
+                <Contatos />
+            </div>
         </header>
         )
 }

@@ -53,16 +53,20 @@ html {
 }
 
 .renderiza {
-  animation: rend 2s ease;
+  animation: rend 1s ease;
 }
 
 @keyframes rend {
   0% {
+    right: -120px;
     opacity: 0;
   }
-
-  100% {
+  50%{
+    right: 30px;
     opacity: 1;
+  }
+  100% {
+    right: 16px;
   }
 }
 
@@ -224,4 +228,59 @@ html {
   animation: cartProj 1s ease-in-out;
   animation-delay: 0.3s;
   animation-fill-mode: both;
+}
+
+@keyframes alert {
+  0%{
+    left: 200px;
+  }
+  50%{
+    left: -100px;
+  }
+  100%{
+    left: 0px;
+  }
+}
+
+.popAlert{
+  animation: alert 1s ease;
+}
+
+@keyframes cardCont {
+  0%{
+    bottom: 120px;
+    opacity: 0;
+  }
+  50%{
+    bottom: -20px;
+    opacity: 1;
+  }
+  100%{
+    bottom: 0px;
+  }
+}
+
+.animaCont{
+  /* overflow-y: hidden; */
+  position: relative;
+  animation: cardCont 1s ease;
+}
+
+
+@keyframes links {
+  0%{
+    right: 120px;
+    opacity: 0;
+  }
+  50%{
+    right: -20px;
+    opacity: 1;
+  }
+  100%{
+    right: 0px;
+  }
+}
+
+.animaLinks{
+  animation: links 1s ease;
 }

@@ -38,9 +38,9 @@ export default function Apresentacao() {
             </div>
 
 
-            <div className="absolute -bottom-20 sm:bottom-5 w-full flex flex-col items-center">
+            <div className="absolute -bottom-20 sm:bottom-10 w-full flex flex-col items-center">
                 {/* <a href="#tecnologias" className="bg-amber-400 px-6 py-1 text-lg rounded-lg text-slate-800 mb-4 hover:scale-110 transition-all">Veja Mais</a> */}
-                <a href="#tecnologias"><Image src={'/setas.svg'} alt="setas para baixo" width={70} height={70} className="animate-bounce opacity-20" /></a>
+                <a href="#tecnologias"><Image src={'/setas.svg'} alt="setas para baixo" width={50} height={50} className="animate-bounce opacity-20" /></a>
             </div>
         </session>
     )
