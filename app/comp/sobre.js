@@ -18,7 +18,7 @@ export default function Sobre(props) {
             {/* <Image src={img} alt="imagens de fundo" width={1000} height={1000}
                 className="w-full h-screen absolute top-0 left-0 object-contain z-10" /> */}
 
-            <div className={`container mx-auto w-[90%] z-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
+            <div className={`container mx-auto z-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">
                     Sobre
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>

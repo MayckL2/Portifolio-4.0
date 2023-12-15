@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import { useCallback } from 'react'
 import Sobre from './comp/sobre'
 import Progresso from './comp/progresso'
-import Footer from './comp/footer'
+import Final from './comp/final'
 import SideBar from './comp/sideBar'
 
 export default function Home() {
@@ -115,7 +115,7 @@ export default function Home() {
       <Tecnologias block={mostraTec} />
       <Projetos block={mostraProj} />
       <Sobre block={mostraSobre} />
-      <Footer block={mostraFooter} />
+      <Final block={mostraFooter} />
 
       <footer className="bg-black w-full mt-16 p-4">
         <p>

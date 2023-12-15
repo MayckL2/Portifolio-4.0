@@ -24,7 +24,7 @@ export default function CardProj(props) {
 
             <div className="flex flex-col mx-4 justify-between items-end gap-2 pt-2">
                 <h4 className={`w-max opacity-40 self-start ${props.reverse ? 'lg:self-end' : 'lg:self-start'}`}>{props.titulo}</h4>
-                <p className={`max-h-1/3 text-start ${props.reverse ? 'lg:text-end' : 'lg:text-start'} text-xl`}>{props.desc}</p>
+                <p className={`max-h-1/3 text-start ${props.reverse ? 'lg:text-end' : 'lg:text-start'} text-2xl`}>{props.desc}</p>
                 <div className={`flex w-max gap-2 self-start ${props.reverse ? 'lg:self-end' : 'lg:self-start'}`}>{listTec}</div>
 
                 <div className={`w-max flex gap-4 self-start ${props.reverse ? 'lg:self-end' : 'lg:self-start'}`}>
