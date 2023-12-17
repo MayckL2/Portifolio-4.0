@@ -44,7 +44,7 @@ export default function Projetos(props) {
             id="projetos"
             className="h-fit sm:min-h-screen w-full flex items-center px-4 pb-20 md:pb-0"
         >
-            <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
+            <div className={`container mx-auto mt-20 block  ${props.block ? 'renderiza' : ''}`}>
                 <h2 className="text-3xl w-fit">
                     Projetos
                     <p className={`p-[2px] bg-amber-400 rounded-lg w-[240px] ${props.block ? 'animaLinha' : null}`}></p>
@@ -59,7 +59,7 @@ export default function Projetos(props) {
                     repo='https://github.com/MayckL2/Countries-React'
                     site='https://countries-react-smoky.vercel.app/'
                     reverse={false}
-                    animate={'animaProj'}
+                    animate={props.block ? 'animaProj' : ''}
                     />
                     <CardProj 
                     projeto='/Pokedex' 
@@ -69,7 +69,7 @@ export default function Projetos(props) {
                     repo='https://github.com/MayckL2/Pokedex-Js'
                     site='https://mayckl2.github.io/Pokedex-Js/'
                     reverse={true}
-                    animate={'animaProj2'}
+                    animate={props.block ? 'animaProj2' : ''}
                     />
                     <CardProj 
                     projeto='/jokempo' 
@@ -79,17 +79,17 @@ export default function Projetos(props) {
                     repo='https://github.com/MayckL2/rock-paper-scissors-master'
                     site='https://mayckl2.github.io/rock-paper-scissors-master/'
                     reverse={false}
-                    animate={'animaProj3'}
+                    animate={props.block ? 'animaProj3' : ''}
                     />
                     <CardProj 
                     projeto='/Pet-Space' 
                     titulo='Pet-Space' 
                     desc='Aplicativo mobile para agendamento de consultas no pet-shop. Inclui também login, cadastro, troca de senha do usuário e cancelamento de consultas.'
                     tec={['react', 'js', 'git']}
-                    repo='https://github.com/MayckL2/rock-paper-scissors-master'
-                    site='https://mayckl2.github.io/rock-paper-scissors-master/'
+                    repo='https://github.com/MayckL2/Pet-Space-Mobile'
+                    site=''
                     reverse={true}
-                    animate={'animaProj4'}
+                    animate={props.block ? 'animaProj4' : ''}
                     />
                 </div>
             </div>

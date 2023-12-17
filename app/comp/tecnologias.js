@@ -31,6 +31,7 @@ export default function Tecnologias(props){
                     <CardTec tecnologia='mongo' style='border-green-400/20 animaTec15'/>
                     <CardTec tecnologia='sql' style='border-blue-400/20 animaTec16'/>
                     <CardTec tecnologia='typescript' style='border-cyan-400/20 animaTec17'/>
+                    <CardTec tecnologia='expo' style='border-cyan-400/20 animaTec17'/>
                 </div>
             </div>
 

@@ -13,7 +13,7 @@ export default function CardProj(props) {
     return (
         <session className={`${props.animate} relative flex flex-col ${props.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-start rounded-lg overflow-hidden w-full lg:w-11/12 h-max lg:h-64`}>
 
-            <a href={props.site} target="_blank" className="relative w-fit lg:w-2/3 flex"
+            <a href={props.site ? props.site : props.repo} target="_blank" className="relative w-fit lg:w-2/3 flex"
             onMouseEnter={()=> setHover(true)} onMouseLeave={()=> setHover(false)}>
                 <Image src='link.svg' alt="link para o projeto" width={30} height={30}
                     className="absolute z-10 top-4 right-4 hover:scale-125 transition-all" />
@@ -31,7 +31,7 @@ export default function CardProj(props) {
                     <a href={props.repo} target="_blank" className="px-4 py-2 w-max rounded-3xl border-4 border-amber-500 border-solid text-amber-500 hover:bg-amber-500 hover:text-slate-800 transition-all">
                         Repositorio
                     </a>
-                    <a href={props.site} target="_blank" className="px-4 py-2 w-max rounded-3xl border-4 border-blue-500 border-solid text-blue-500 hover:bg-blue-500 hover:text-slate-800 transition-all">
+                    <a href={props.site} target="_blank" className={`${props.site ? '' : 'hidden'} px-4 py-2 w-max rounded-3xl border-4 border-blue-500 border-solid text-blue-500 hover:bg-blue-500 hover:text-slate-800 transition-all`}>
                         Web Site
                     </a>
                 </div>
