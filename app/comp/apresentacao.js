@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import Contatos from './contatos'
+import Contatos from '../ui/contatos'
 import Typewriter from 'typewriter-effect';
 
 

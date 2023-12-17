@@ -1,5 +1,5 @@
 "use client";
-import CardProj from "./cardProj";
+import CardProj from "../ui/cardProj";
 import Image from "next/image";
 import {
     Navigation,
@@ -42,7 +42,7 @@ export default function Projetos(props) {
     return (
         <session
             id="projetos"
-            className="h-fit sm:min-h-screen w-full flex items-center px-4"
+            className="h-fit sm:min-h-screen w-full flex items-center px-4 pb-20 md:pb-0"
         >
             <div className={`container mx-auto mt-20 renderiza ${props.block ? 'block' : 'hidden'}`}>
                 <h2 className="text-3xl w-fit">

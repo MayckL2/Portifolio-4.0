@@ -1,5 +1,5 @@
 'use client'
-import CardTec from "./cardTec"
+import CardTec from "../ui/cardTec"
 
 
 export default function Tecnologias(props){

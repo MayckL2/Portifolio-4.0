@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import SideBar from './sideBar'
-import Contatos from './contatos'
+import SideBar from '../ui/sideBar'
+import Contatos from '../ui/contatos'
 
 export default function Header(props){
 

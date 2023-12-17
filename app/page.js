@@ -8,9 +8,10 @@ import Projetos from './comp/projetos'
 import { useEffect, useState } from 'react'
 import { useCallback } from 'react'
 import Sobre from './comp/sobre'
-import Progresso from './comp/progresso'
+import Progresso from './ui/progresso'
 import Final from './comp/final'
-import SideBar from './comp/sideBar'
+import SideBar from './ui/sideBar'
+import Formacao from './comp/formacao'
 
 export default function Home() {
 
@@ -20,6 +21,7 @@ export default function Home() {
   const [mostraBarra, setMostraBarra] = useState(false)
   const [mostraFooter, setMostraFooter] = useState(false)
   const [mostraContatos, setMostraContatos] = useState(true)
+  const [mostraFormacao, setMostraFormacao] = useState(true)
   const [menu, setMenu] = useState('-right-[150%]')
 
   // CALCULA SE O ELEMENTO APARECEU NA ROLAGEM DA TELA
@@ -29,6 +31,7 @@ export default function Home() {
     const proj = document.getElementById('projetos').getBoundingClientRect();
     const sobre = document.getElementById('sobre').getBoundingClientRect();
     const footer = document.getElementById('footer').getBoundingClientRect();
+    const formacao = document.getElementById('formacao').getBoundingClientRect();
     // console.log(proj.top.toFixed())
 
     // rederiza tecnologias quando aparecer na tela
@@ -59,6 +62,12 @@ export default function Home() {
       setMostraSobre(true)
     } else {
       setMostraSobre(false)
+    }
+
+    if (formacao.top.toFixed() <= 500) {
+      setMostraFormacao(true)
+    } else {
+      setMostraFormacao(false)
     }
 
     if (footer.top.toFixed() <= 600) {
@@ -109,11 +118,12 @@ export default function Home() {
       onScroll={() => scroll()}>
       <Header abreMenu={()=> setMenu('right-[0%]')} mostraContatos={mostraContatos}/>
       <SideBar abreMenu={menu} fechaMenu={()=> setMenu('-right-[150%]')}/>
-      <Progresso block={mostraBarra} tec={mostraTec} proj={mostraProj} sobre={mostraSobre} cont={mostraFooter} />
+      <Progresso block={mostraBarra} tec={mostraTec} proj={mostraProj} sobre={mostraSobre} form={mostraFormacao} cont={mostraFooter} />
       <Apresentacao />
       <p id='found'></p>
       <Tecnologias block={mostraTec} />
       <Projetos block={mostraProj} />
+      <Formacao block={true} />
       <Sobre block={mostraSobre} />
       <Final block={mostraFooter} />
 
