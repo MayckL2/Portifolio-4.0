@@ -13,12 +13,12 @@ export default function CardProj(props) {
     return (
         <session className={`${props.animate} relative flex flex-col ${props.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-start rounded-lg overflow-hidden w-full lg:w-11/12 h-max lg:h-64`}>
 
-            <a href={props.site} target="_blank" className="relative w-fit lg:w-[600px] flex"
+            <a href={props.site} target="_blank" className="relative w-fit lg:w-2/3 flex"
             onMouseEnter={()=> setHover(true)} onMouseLeave={()=> setHover(false)}>
                 <Image src='link.svg' alt="link para o projeto" width={30} height={30}
                     className="absolute z-10 top-4 right-4 hover:scale-125 transition-all" />
                 <Image src={`${props.projeto}.png`} alt={props.projeto} width={1000} height={1000}
-                    className={`w-[600px] object-fill cursor-pointer hover:opacity-50 transition-all`} />
+                    className={`w-full object-fill rounded-2xl cursor-pointer hover:opacity-50 transition-all`} />
                 {/* <p className={`w-full text-center self-center absolute ${hover ? '' : 'hidden'}`}>Visite o projeto {props.titulo}</p> */}
             </a>
 

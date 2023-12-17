@@ -81,6 +81,16 @@ export default function Projetos(props) {
                     reverse={false}
                     animate={'animaProj3'}
                     />
+                    <CardProj 
+                    projeto='/Pet-Space' 
+                    titulo='Pet-Space' 
+                    desc='Aplicativo mobile para agendamento de consultas no pet-shop. Inclui também login, cadastro, troca de senha do usuário e cancelamento de consultas.'
+                    tec={['react', 'js', 'git']}
+                    repo='https://github.com/MayckL2/rock-paper-scissors-master'
+                    site='https://mayckl2.github.io/rock-paper-scissors-master/'
+                    reverse={true}
+                    animate={'animaProj4'}
+                    />
                 </div>
             </div>
 

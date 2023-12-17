@@ -123,7 +123,7 @@ export default function Home() {
       <p id='found'></p>
       <Tecnologias block={mostraTec} />
       <Projetos block={mostraProj} />
-      <Formacao block={true} />
+      <Formacao block={mostraFormacao} />
       <Sobre block={mostraSobre} />
       <Final block={mostraFooter} />
 

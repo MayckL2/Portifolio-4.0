@@ -190,6 +190,36 @@ html {
   animation-delay: 1.1s;
   animation-fill-mode: both;
 }
+.animaTec13{
+  overflow-y: hidden;
+  animation: cardTec 1s ease-in-out;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+.animaTec14{
+  overflow-y: hidden;
+  animation: cardTec 1s ease-in-out;
+  animation-delay: 1.3s;
+  animation-fill-mode: both;
+}
+.animaTec15{
+  overflow-y: hidden;
+  animation: cardTec 1s ease-in-out;
+  animation-delay: 1.4s;
+  animation-fill-mode: both;
+}
+.animaTec16{
+  overflow-y: hidden;
+  animation: cardTec 1s ease-in-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
+}
+.animaTec17{
+  overflow-y: hidden;
+  animation: cardTec 1s ease-in-out;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+}
 
 @keyframes cartProj {
   0%{
@@ -227,6 +257,11 @@ html {
 .animaProj3{
   animation: cartProj 1s ease-in-out;
   animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+.animaProj4{
+  animation: cartProj 1s ease-in-out;
+  animation-delay: 0.4s;
   animation-fill-mode: both;
 }
 

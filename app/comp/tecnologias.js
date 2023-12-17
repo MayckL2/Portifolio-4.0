@@ -26,6 +26,11 @@ export default function Tecnologias(props){
                     <CardTec tecnologia='figma' style='border-amber-600/20 animaTec10'/>
                     <CardTec tecnologia='bootstrap' style='border-indigo-600/20 animaTec11'/>
                     <CardTec tecnologia='php' style='border-indigo-400/20 animaTec12'/>
+                    <CardTec tecnologia='sass' style='border-pink-400/20 animaTec13'/>
+                    <CardTec tecnologia='git' style='border-orange-400/20 animaTec14'/>
+                    <CardTec tecnologia='mongo' style='border-green-400/20 animaTec15'/>
+                    <CardTec tecnologia='sql' style='border-blue-400/20 animaTec16'/>
+                    <CardTec tecnologia='typescript' style='border-cyan-400/20 animaTec17'/>
                 </div>
             </div>
 
